@@ -8,8 +8,12 @@ public class PlayerShip : Area2D
 
     private CollisionShape2D _collisionShape2D;
 
+    public Vector2 ScreenSize; // Size of the game window.
+
     public override void _Ready()
     {
+        ScreenSize = GetViewportRect().Size;
+
         _collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
     }
 
@@ -37,5 +41,16 @@ public class PlayerShip : Area2D
             velocity.y -= 1;
         }
 
+        if (velocity.Length() > 0)
+        {
+            velocity = velocity.Normalized() * Speed;
+        }
+
+        // Change
+        Position += velocity * delta;
+        Position = new Vector2(
+            x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
+            y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
+        );
     }
 }
