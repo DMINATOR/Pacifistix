@@ -23,4 +23,8 @@ public static class InputMapKeys
     public const string MoveUp = "move_up";
 
     public const string MoveDown = "move_down";
+
+    // Actions
+
+    public const string ShootWeapon = "shoot_weapon";
 }

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/sprites/actors/PlayerShipSprite.png" type="Texture" id=1]
 [ext_resource path="res://scenes/actors/PlayerShip.cs" type="Script" id=2]
+[ext_resource path="res://scenes/projectiles/BulletProjectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/weapon/BasicGun.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 23.0
@@ -9,6 +11,10 @@ height = 16.0
 
 [node name="PlayerShip" type="Area2D"]
 script = ExtResource( 2 )
+
+[node name="BasicGun" parent="." instance=ExtResource( 4 )]
+position = Vector2( 23, 14 )
+ProjectileScene = ExtResource( 3 )
 
 [node name="ShipBodySprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

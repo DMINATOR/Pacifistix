@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/weapon/BasicGun.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprites/basic/box.png" type="Texture" id=2]
 
-[node name="BasicGun" type="Node"]
+[node name="BasicGun" type="Node2D"]
+scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": "Basic gun that deploys projectiles"
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.548, 1 )
+texture = ExtResource( 2 )

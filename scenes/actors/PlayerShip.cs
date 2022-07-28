@@ -53,4 +53,13 @@ public class PlayerShip : Area2D
             y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
         );
     }
+
+    // Single action
+    public override void _Input(InputEvent inputEvent)
+    {
+        if (inputEvent.IsActionPressed(InputMapKeys.ShootWeapon))
+        {
+            GD.Print("Shoot");
+        }
+    }
 }
