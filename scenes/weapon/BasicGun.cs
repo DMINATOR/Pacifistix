@@ -6,14 +6,21 @@ public class BasicGun : Node2D
     [Export]
     public PackedScene ProjectileScene;
 
-    // Called when the node enters the scene tree for the first time.
+    private Line2D _projectileDirection;
+
     public override void _Ready()
     {
-        
+        _projectileDirection = GetNode<Line2D>("ProjectileDirection");
     }
 
     public void ShootProjectile()
     {
+        var newProjectile = ProjectileScene.Instance<BulletProjectile>();
 
+        //var velocity = new Vector2((float)GD.RandRange(150.0, 250.0), 0);
+        //newProjectile.LinearVelocity = velocity.Rotated(direction);
+
+        // Add child
+        this.AddChild(newProjectile);
     }
 }
