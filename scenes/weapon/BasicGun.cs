@@ -26,7 +26,7 @@ public class BasicGun : Node2D
         //newProjectile.LinearVelocity = newProjectile.Position - direction;
 
         newProjectile.Transform = _spawnLocation.GlobalTransform;
-        newProjectile.LinearVelocity = new Vector2(0, -ProjectileSpeed).Rotated(this.Rotation);
+        newProjectile.LinearVelocity = new Vector2(0, -ProjectileSpeed).Rotated(this.GlobalRotation);
 
         // Add child to the root
         Owner.Owner.AddChild(newProjectile);
