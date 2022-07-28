@@ -17,8 +17,9 @@ public class BasicGun : Node2D
     {
         var newProjectile = ProjectileScene.Instance<BulletProjectile>();
 
-        //var velocity = new Vector2((float)GD.RandRange(150.0, 250.0), 0);
-        //newProjectile.LinearVelocity = velocity.Rotated(direction);
+        newProjectile.Position = _projectileDirection.Points[0];
+        var direction = _projectileDirection.Points[1];
+        newProjectile.LinearVelocity = direction;
 
         // Add child
         this.AddChild(newProjectile);
