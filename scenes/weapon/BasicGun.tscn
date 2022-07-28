@@ -10,12 +10,9 @@ __meta__ = {
 "_editor_description_": "Basic gun that deploys projectiles"
 }
 
-[node name="ProjectileDirection" type="Line2D" parent="."]
-position = Vector2( 65, 7.5 )
-scale = Vector2( 1, 1 )
-points = PoolVector2Array( -65, -35, -65, -57.5 )
-width = 0.0
-
 [node name="GunShroudSprite" type="Sprite" parent="."]
 scale = Vector2( 0.548, 1 )
 texture = ExtResource( 2 )
+
+[node name="SpawnLocation" type="Position2D" parent="."]
+position = Vector2( 0, -35 )
