@@ -28,6 +28,6 @@ public class SingleShotGun : BaseGun
         newProjectile.LinearVelocity = new Vector2(0, -ProjectileSpeed).Rotated(this.GlobalRotation);
 
         // Add child to the root
-        Owner.Owner.AddChild(newProjectile);
+        Owner.Owner.Owner.AddChild(newProjectile);
     }
 }
