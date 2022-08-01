@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class SingleShotGun : Node2D
+public class SingleShotGun : BaseGun
 {
     [Export]
     public PackedScene ProjectileScene;
@@ -16,7 +16,7 @@ public class SingleShotGun : Node2D
         _spawnLocation = GetNode<Position2D>("SpawnLocation");
     }
 
-    public void ShootProjectile()
+    public override void ShootProjectile()
     {
         // Create new instance
         var newProjectile = ProjectileScene.Instance<BulletProjectile>();

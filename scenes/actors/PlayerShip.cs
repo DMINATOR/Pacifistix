@@ -10,14 +10,14 @@ public class PlayerShip : Area2D
 
     public Vector2 ScreenSize; // Size of the game window.
 
-    private SingleShotGun _basicGun;
+    private PlayerGuns _playerGuns;
 
     public override void _Ready()
     {
         ScreenSize = GetViewportRect().Size;
 
         _collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
-        _basicGun = GetNode<SingleShotGun>("SingleShotGun");
+        _playerGuns = GetNode<PlayerGuns>("PlayerGuns");
     }
 
     public override void _Process(float delta)
@@ -62,7 +62,7 @@ public class PlayerShip : Area2D
     {
         if (inputEvent.IsActionPressed(InputMapKeys.ShootWeapon))
         {
-            _basicGun.ShootProjectile();
+            _playerGuns.Shoot();
         }
     }
 }
