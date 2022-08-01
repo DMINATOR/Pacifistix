@@ -15,8 +15,8 @@ __meta__ = {
 "_editor_description_": "Player ship, controlled by player"
 }
 
-[node name="BasicGun" parent="." instance=ExtResource( 4 )]
-position = Vector2( 23, 14 )
+[node name="SingleShotGun" parent="." instance=ExtResource( 4 )]
+position = Vector2( 23, 15 )
 ProjectileScene = ExtResource( 3 )
 
 [node name="ShipBodySprite" type="Sprite" parent="."]

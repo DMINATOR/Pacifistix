@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class BasicGun : Node2D
+public class SingleShotGun : Node2D
 {
     [Export]
     public PackedScene ProjectileScene;
