@@ -11,6 +11,9 @@ height = 16.0
 
 [node name="PlayerShip" type="Area2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Player ship, controlled by player"
+}
 
 [node name="BasicGun" parent="." instance=ExtResource( 4 )]
 position = Vector2( 23, 14 )

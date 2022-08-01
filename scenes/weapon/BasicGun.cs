@@ -18,14 +18,13 @@ public class BasicGun : Node2D
 
     public void ShootProjectile()
     {
+        // Create new instance
         var newProjectile = ProjectileScene.Instance<BulletProjectile>();
 
-        //newProjectile.Position = _projectileDirection.Points[0];
-        //var direction = _projectileDirection.Points[1];
-
-        //newProjectile.LinearVelocity = newProjectile.Position - direction;
-
+        // Apply global transform location
         newProjectile.Transform = _spawnLocation.GlobalTransform;
+
+        // Apply rotation to projectile
         newProjectile.LinearVelocity = new Vector2(0, -ProjectileSpeed).Rotated(this.GlobalRotation);
 
         // Add child to the root
