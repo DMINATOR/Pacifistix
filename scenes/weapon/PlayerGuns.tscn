@@ -13,4 +13,5 @@ __meta__ = {
 [node name="AvailableGuns" type="Node2D" parent="."]
 
 [node name="SingleShotGun" parent="AvailableGuns" instance=ExtResource( 1 )]
+DisplayName = "Single Shot"
 ProjectileScene = ExtResource( 3 )
