@@ -7,7 +7,7 @@
 scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 1 )
 __meta__ = {
-"_editor_description_": "Basic gun that deploys projectiles"
+"_editor_description_": "Basic gun that deploys a projectile with a single shot."
 }
 
 [node name="GunShroudSprite" type="Sprite" parent="."]
