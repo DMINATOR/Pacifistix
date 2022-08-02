@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ui/PlayerGunsHUD.cs" type="Script" id=1]
 
 [node name="PlayerGunsHUD" type="Control"]
 anchor_right = 1.0
@@ -7,12 +9,16 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
+script = ExtResource( 1 )
+GunShotEffectColorStart = Color( 0.635294, 0.101961, 0.101961, 0.992157 )
+GunShotEffectColorEnd = Color( 0.0980392, 0.25098, 0.184314, 1 )
+GunShotEffectDuration = 1.0
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="GunName" type="Label" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
@@ -20,3 +26,20 @@ margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
 text = "PlayerGunsHUD"
+
+[node name="GunShotEffect" type="Control" parent="."]
+
+[node name="GunShotTween" type="Tween" parent="GunShotEffect"]
+playback_speed = 4.0
+playback/speed = 4.0
+__meta__ = {
+"_editor_description_": "Trigger whenever equipped gun is shot"
+}
+
+[node name="ColorRect" type="ColorRect" parent="GunShotEffect"]
+margin_left = 15.0
+margin_top = 38.0
+margin_right = 55.0
+margin_bottom = 78.0
+
+[connection signal="tween_all_completed" from="GunShotEffect/GunShotTween" to="." method="GunShotTweenEnd"]
