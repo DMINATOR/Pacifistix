@@ -11,26 +11,45 @@ public class SingleShotGun : BaseGun
 
     private Position2D _spawnLocation;
 
+    private bool _shooting;
+
     public override void _Ready()
     {
         _spawnLocation = GetNode<Position2D>("SpawnLocation");
+        _shooting = false;
     }
 
     public override BaseGun ShootProjectile()
     {
-        // Create new instance
-        var newProjectile = ProjectileScene.Instance<BulletProjectile>();
+        if( !_shooting)
+        {
+            GD.Print("Shoot");
+            _shooting = true;
 
-        // Apply global transform location
-        newProjectile.Transform = _spawnLocation.GlobalTransform;
+            // Create new instance
+            var newProjectile = ProjectileScene.Instance<BulletProjectile>();
 
-        // Apply rotation to projectile
-        newProjectile.LinearVelocity = new Vector2(0, -ProjectileSpeed).Rotated(this.GlobalRotation);
+            // Apply global transform location
+            newProjectile.Transform = _spawnLocation.GlobalTransform;
 
-        // Add child to the root
-        Owner.Owner.Owner.AddChild(newProjectile);
+            // Apply rotation to projectile
+            newProjectile.LinearVelocity = new Vector2(0, -ProjectileSpeed).Rotated(this.GlobalRotation);
 
-        // Projectile was shot
-        return this;
+            // Add child to the root
+            Owner.Owner.Owner.AddChild(newProjectile);
+
+            // Projectile was shot
+            return this;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public override void Release()
+    {
+        GD.Print("Release");
+        _shooting = false;
     }
 }

@@ -27,6 +27,7 @@ public class PlayerShip : Area2D
     {
         var velocity = Vector2.Zero; // The player's movement vector.
 
+        // Movement
         if (Input.IsActionPressed(InputMapKeys.MoveRight))
         {
             velocity.x += 1;
@@ -58,19 +59,39 @@ public class PlayerShip : Area2D
             x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
             y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
         );
+
+        // Shooting
+        if (Input.IsActionPressed(InputMapKeys.ShootWeapon))
+        {
+            StartShootingWeapon();
+        }
+        else if (Input.IsActionJustReleased(InputMapKeys.ShootWeapon))
+        {
+            StopShootingWeapon();
+        }
     }
 
     // Single action
-    public override void _Input(InputEvent inputEvent)
+    //public override void _Input(InputEvent inputEvent)
+    //{
+    //    if (inputEvent.IsActionPressed(InputMapKeys.ShootWeapon))
+    //    {
+    //        StartShootingWeapon();
+    //    }
+    //}
+
+    private void StartShootingWeapon()
     {
-        if (inputEvent.IsActionPressed(InputMapKeys.ShootWeapon))
+        var gun = _playerGuns.Shoot();
+        if (gun != null)
         {
-            var gun = _playerGuns.Shoot();
-            if ( gun != null )
-            {
-                // Emit signal only when player actually shot a weapon
-                EmitSignal(nameof(OnPlayerGunShootDelegate), new Godot.Collections.Array { gun });
-            }
+            // Emit signal only when player actually shot a weapon
+            EmitSignal(nameof(OnPlayerGunShootDelegate), new Godot.Collections.Array { gun });
         }
+    }
+
+    private void StopShootingWeapon()
+    {
+        _playerGuns.Release();
     }
 }

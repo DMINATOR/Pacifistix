@@ -22,4 +22,9 @@ public class PlayerGuns : Node2D
     {
         return _equippedGun.ShootProjectile();
     }
+
+    public void Release()
+    {
+        _equippedGun.Release();
+    }
 }

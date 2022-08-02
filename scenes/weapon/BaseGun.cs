@@ -10,4 +10,9 @@ public abstract class BaseGun : Node2D
     {
         return null;
     }
+
+    public virtual void Release()
+    {
+
+    }
 }
