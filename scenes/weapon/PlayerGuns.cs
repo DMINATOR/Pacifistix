@@ -18,8 +18,8 @@ public class PlayerGuns : Node2D
 
 
     // Shot from current equipped gun
-    public void Shoot()
+    public BaseGun Shoot()
     {
-        _equippedGun.ShootProjectile();
+        return _equippedGun.ShootProjectile();
     }
 }

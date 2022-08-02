@@ -16,7 +16,7 @@ public class SingleShotGun : BaseGun
         _spawnLocation = GetNode<Position2D>("SpawnLocation");
     }
 
-    public override void ShootProjectile()
+    public override BaseGun ShootProjectile()
     {
         // Create new instance
         var newProjectile = ProjectileScene.Instance<BulletProjectile>();
@@ -29,5 +29,8 @@ public class SingleShotGun : BaseGun
 
         // Add child to the root
         Owner.Owner.Owner.AddChild(newProjectile);
+
+        // Projectile was shot
+        return this;
     }
 }

@@ -14,3 +14,5 @@
 [node name="HUD" type="Node" parent="."]
 
 [node name="GameplayHUD" parent="HUD" instance=ExtResource( 2 )]
+
+[connection signal="OnPlayerGunShootDelegate" from="Game/Actors/Player" to="HUD/GameplayHUD" method="OnPlayerGunShootDelegateCallback"]

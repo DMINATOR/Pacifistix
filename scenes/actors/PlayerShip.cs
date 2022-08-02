@@ -6,6 +6,9 @@ public class PlayerShip : Area2D
     [Export]
     public int Speed = 400; // How fast the player ship will move (pixels/sec).
 
+    [Signal]
+    public delegate void OnPlayerGunShootDelegate(BaseGun gun);
+
     private CollisionShape2D _collisionShape2D;
 
     public Vector2 ScreenSize; // Size of the game window.
@@ -62,7 +65,12 @@ public class PlayerShip : Area2D
     {
         if (inputEvent.IsActionPressed(InputMapKeys.ShootWeapon))
         {
-            _playerGuns.Shoot();
+            var gun = _playerGuns.Shoot();
+            if ( gun != null )
+            {
+                // Emit signal only when player actually shot a weapon
+                EmitSignal(nameof(OnPlayerGunShootDelegate), new Godot.Collections.Array { gun });
+            }
         }
     }
 }
