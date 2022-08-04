@@ -26,17 +26,8 @@ public class SingleShotGun : BaseGun
             GD.Print("Shoot");
             _shooting = true;
 
-            // Create new instance
             var newProjectile = ProjectileScene.Instance<BulletProjectile>();
-
-            // Apply global transform location
-            newProjectile.Transform = _spawnLocation.GlobalTransform;
-
-            // Apply rotation to projectile
-            newProjectile.LinearVelocity = new Vector2(0, -ProjectileSpeed).Rotated(this.GlobalRotation);
-
-            // Add child to the root
-            Owner.Owner.Owner.AddChild(newProjectile);
+            newProjectile.SpawnProjectileAt(Owner.Owner.Owner, _spawnLocation, this.GlobalRotation, ProjectileSpeed);
 
             // Projectile was shot
             return this;
