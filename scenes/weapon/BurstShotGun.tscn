@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/sprites/basic/box.png" type="Texture" id=1]
 [ext_resource path="res://scenes/weapon/BurstShotGun.cs" type="Script" id=2]
 
-[node name="BurstShotGun" type="Node"]
+[node name="BurstShotGun" type="Node2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": "Basic gun that deploys a projectile continuosly as long as "
