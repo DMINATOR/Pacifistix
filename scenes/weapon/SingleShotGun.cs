@@ -23,7 +23,6 @@ public class SingleShotGun : BaseGun
     {
         if( !_shooting)
         {
-            GD.Print("Shoot");
             _shooting = true;
 
             var newProjectile = ProjectileScene.Instance<BulletProjectile>();
@@ -40,7 +39,6 @@ public class SingleShotGun : BaseGun
 
     public override void Release()
     {
-        GD.Print("Release");
         _shooting = false;
     }
 }

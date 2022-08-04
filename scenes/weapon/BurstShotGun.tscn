@@ -17,3 +17,8 @@ texture = ExtResource( 1 )
 position = Vector2( 0, -35 )
 
 [node name="DelayBetweenProjectilesTimer" type="Timer" parent="."]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[connection signal="timeout" from="DelayBetweenProjectilesTimer" to="." method="OnDelayBetweenProjectilesTimerTimeout"]

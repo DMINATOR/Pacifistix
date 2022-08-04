@@ -10,7 +10,7 @@ public class BurstShotGun : BaseGun
     public float ProjectileSpeed = 100; // How fast the projectile will move (pixels/sec).
 
     [Export]
-    public float DelayBetweenShots = 100; // How long we should wait before shooting another projectile (msec).
+    public float DelayBetweenShots = 0.1f; // How long we should wait before shooting another projectile (sec).
 
     private Position2D _spawnLocation;
 
@@ -23,5 +23,45 @@ public class BurstShotGun : BaseGun
         _delayBetweenProjectilesTimer = GetNode<Timer>("DelayBetweenProjectilesTimer");
     }
 
+    public override BaseGun ShootProjectile()
+    {
+        if( _delayBetweenProjectilesTimer.TimeLeft == 0 )
+        {
+            ShootProjectileInternal();
 
+            _delayBetweenProjectilesTimer.Start(DelayBetweenShots);
+
+            // started shooting
+            return this;
+        }
+        else
+        {
+            // waiting for the next shot
+            return null;
+        }
+    }
+
+    public override void Release()
+    {
+        GD.Print("Release");
+
+        // reset timer
+        _delayBetweenProjectilesTimer.Stop();
+    }
+
+    public void OnDelayBetweenProjectilesTimerTimeout()
+    {
+        GD.Print("Timeout");
+
+        ShootProjectileInternal();
+    }
+
+    private void ShootProjectileInternal()
+    {
+        // Shoot projectile
+        GD.Print("Shoot");
+
+        var newProjectile = ProjectileScene.Instance<BulletProjectile>();
+        newProjectile.SpawnProjectileAt(Owner.Owner.Owner, _spawnLocation, this.GlobalRotation, ProjectileSpeed);
+    }
 }
