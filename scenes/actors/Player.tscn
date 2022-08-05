@@ -8,4 +8,5 @@ script = ExtResource( 1 )
 
 [node name="PlayerShip" parent="." instance=ExtResource( 2 )]
 
+[connection signal="OnPlayerGunChangedDelegate" from="PlayerShip" to="." method="OnPlayerGunChangedDelegateCallback"]
 [connection signal="OnPlayerGunShootDelegate" from="PlayerShip" to="." method="OnPlayerGunShootDelegateCallback"]

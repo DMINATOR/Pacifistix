@@ -20,16 +20,20 @@ public class PlayerGunsHUD : Control
 
     private Tween _gunShotTween;
 
+    private Label _gunName;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         _colorRect = GetNode<ColorRect>("GunShotEffect/ColorRect");
 
         _gunShotTween = GetNode<Tween>("GunShotEffect/GunShotTween");
+
+        _gunName = GetNode<Label>("Panel/GunName");
     }
 
     // Trigger tween event to show 
-    public void GunShotTweenStart(BaseGun gun)
+    public void OnPlayerGunShot(BaseGun gun)
     {
         _gunShotTween.InterpolateProperty(
             _colorRect,
@@ -44,5 +48,10 @@ public class PlayerGunsHUD : Control
     public void GunShotTweenEnd()
     {
 
+    }
+
+    public void OnPlayerGunChanged(BaseGun gun)
+    {
+       _gunName.Text = gun.Name;
     }
 }

@@ -13,6 +13,13 @@ public class GameplayHUD : Control
 
     public void OnPlayerGunShootDelegateCallback(BaseGun gun)
     {
-        _playerGunsHUD.GunShotTweenStart(gun);
+        _playerGunsHUD.OnPlayerGunShot(gun);
+    }
+
+    public void OnPlayerGunChangedDelegateCallback(BaseGun gun)
+    {
+        GD.Print($"GameplayGunsHUD - {gun}");
+
+        _playerGunsHUD.OnPlayerGunChanged(gun);
     }
 }

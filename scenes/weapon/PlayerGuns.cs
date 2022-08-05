@@ -31,17 +31,17 @@ public class PlayerGuns : Node2D
     }
 
     // Choose 
-    public void EquipNextGun()
+    public BaseGun EquipNextGun()
     {
-        EquipGun(1);
+        return EquipGun(1);
     }
 
-    public void EquipPreviousGun()
+    public BaseGun EquipPreviousGun()
     {
-        EquipGun(-1);
+        return EquipGun(-1);
     }
 
-    private void EquipGun(int direction)
+    private BaseGun EquipGun(int direction)
     {
         var nextIndex = 0;
 
@@ -51,6 +51,8 @@ public class PlayerGuns : Node2D
         }
 
         _equippedGun = (BaseGun)_availableGuns.GetChild(nextIndex); // Assign first as equipped
+
+        return _equippedGun;
     }
 
     private int CalculateGunIndex(int currentIndex)

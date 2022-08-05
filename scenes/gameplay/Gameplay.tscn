@@ -17,4 +17,5 @@ script = ExtResource( 3 )
 
 [node name="GameplayHUD" parent="HUD" instance=ExtResource( 2 )]
 
+[connection signal="OnPlayerGunChangedDelegate" from="Game/Actors/Player" to="HUD/GameplayHUD" method="OnPlayerGunChangedDelegateCallback"]
 [connection signal="OnPlayerGunShootDelegate" from="Game/Actors/Player" to="HUD/GameplayHUD" method="OnPlayerGunShootDelegateCallback"]
