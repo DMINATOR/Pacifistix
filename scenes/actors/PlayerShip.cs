@@ -71,14 +71,18 @@ public class PlayerShip : Area2D
         }
     }
 
-    // Single action
-    //public override void _Input(InputEvent inputEvent)
-    //{
-    //    if (inputEvent.IsActionPressed(InputMapKeys.ShootWeapon))
-    //    {
-    //        StartShootingWeapon();
-    //    }
-    //}
+    // Constant action
+    public override void _Input(InputEvent inputEvent)
+    {
+        if (inputEvent.IsActionPressed(InputMapKeys.NextWeapon))
+        {
+            _playerGuns.EquipNextGun();
+        }
+        if (inputEvent.IsActionPressed(InputMapKeys.PreviousWeapon))
+        {
+            _playerGuns.EquipPreviousGun();
+        }
+    }
 
     private void StartShootingWeapon()
     {

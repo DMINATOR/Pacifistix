@@ -27,4 +27,8 @@ public static class InputMapKeys
     // Actions
 
     public const string ShootWeapon = "shoot_weapon";
+
+    public const string NextWeapon = "next_weapon";
+
+    public const string PreviousWeapon = "previous_weapon";
 }
