@@ -94,6 +94,11 @@ public class PlayerShip : Area2D
         }
     }
 
+    public BaseGun EquipAGun()
+    {
+        return _playerGuns.EquipNextGun();
+    }
+
     private void StartShootingWeapon()
     {
         var gun = _playerGuns.Shoot();

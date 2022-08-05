@@ -9,6 +9,13 @@ public class Player : Node
     [Signal]
     public delegate void OnPlayerGunChangedDelegate(BaseGun gun);
 
+    PlayerShip _playerShip;
+
+    public override void _Ready()
+    {
+        _playerShip = GetNode<PlayerShip>("PlayerShip");
+    }
+
     // Called when player gun shoots
     public void OnPlayerGunShootDelegateCallback(BaseGun gun)
     {
@@ -19,5 +26,12 @@ public class Player : Node
     public void OnPlayerGunChangedDelegateCallback(BaseGun gun)
     {
         EmitSignal(nameof(OnPlayerGunChangedDelegate), gun );
+    }
+
+    public void EquipAGun()
+    {
+        var gun = _playerShip.EquipAGun();
+
+        EmitSignal(nameof(OnPlayerGunChangedDelegate), gun);
     }
 }

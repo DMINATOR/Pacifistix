@@ -11,7 +11,7 @@ public class Gameplay : Node
     {
         _player = GetNode<Player>("Game/Actors/Player");
 
-
+        _player.EquipAGun();
     }
 
 
