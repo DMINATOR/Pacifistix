@@ -18,7 +18,7 @@ public class GameplayHUD : Control
 
     public void OnPlayerGunChangedDelegateCallback(BaseGun gun)
     {
-        GD.Print($"GameplayGunsHUD - {gun}");
+        GD.Print($"GameplayGunsHUD - {_playerGunsHUD},{gun}");
 
         _playerGunsHUD.OnPlayerGunChanged(gun);
     }

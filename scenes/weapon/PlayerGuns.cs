@@ -12,6 +12,8 @@ public class PlayerGuns : Node2D
 
     public override void _Ready()
     {
+        GD.Print("ready");
+
         _availableGuns = GetNode<Node2D>("AvailableGuns");
 
         EquipNextGun();
@@ -39,6 +41,13 @@ public class PlayerGuns : Node2D
     public BaseGun EquipPreviousGun()
     {
         return EquipGun(-1);
+    }
+
+    public BaseGun GetEquippedGun()
+    {
+        GD.Print("get");
+
+        return _equippedGun;
     }
 
     private BaseGun EquipGun(int direction)
