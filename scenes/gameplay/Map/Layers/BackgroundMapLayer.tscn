@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/gameplay/Map/Tiles/Background1.tres" type="TileSet" id=1]
+
+[node name="BackgroundMapLayer" type="Node2D"]
+__meta__ = {
+"_editor_description_": "The last layer. No collision detection"
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -5177344, 0, 0, -4128768, 0, 0, -3080192, 0, 0, -2031616, 0, 0, -1048576, 0, 0, 0, 0, 0 )
