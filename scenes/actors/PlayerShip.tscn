@@ -15,7 +15,6 @@ __meta__ = {
 }
 
 [node name="PlayerGuns" parent="." instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 20, 0 )
 
 [node name="ShipBodySprite" type="Sprite" parent="."]
