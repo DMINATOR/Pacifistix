@@ -10,12 +10,12 @@ script = ExtResource( 3 )
 
 [node name="Game" type="Node" parent="."]
 
+[node name="GameMap" parent="Game" instance=ExtResource( 4 )]
+
 [node name="Actors" type="Node" parent="Game"]
 
 [node name="_player" parent="Game/Actors" instance=ExtResource( 1 )]
 unique_name_in_owner = true
-
-[node name="GameMap" parent="Game" instance=ExtResource( 4 )]
 
 [node name="HUD" type="Node" parent="."]
 
