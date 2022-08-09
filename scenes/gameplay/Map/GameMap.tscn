@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/gameplay/Map/Layers/BackgroundMapLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gameplay/Map/GameMap.cs" type="Script" id=2]
+[ext_resource path="res://scenes/gameplay/Map/Layers/StarmapLayer.tscn" type="PackedScene" id=3]
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource( 2 )
@@ -15,5 +16,8 @@ unique_name_in_owner = true
 
 [node name="BackgroundMapLayer" parent="_layers" instance=ExtResource( 1 )]
 MovementSpeed = 10.0
+
+[node name="StarMapLayer" parent="_layers" instance=ExtResource( 3 )]
+MovementSpeed = 12.0
 
 [node name="Logic" type="Node" parent="."]
