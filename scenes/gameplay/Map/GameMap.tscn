@@ -15,7 +15,7 @@ MovementDirection = Vector2( 0, 1 )
 unique_name_in_owner = true
 
 [node name="BackgroundMapLayer" parent="_layers" instance=ExtResource( 1 )]
-MovementSpeed = 10.0
+MovementSpeed = 8.0
 
 [node name="StarMapLayer" parent="_layers" instance=ExtResource( 3 )]
 MovementSpeed = 12.0
