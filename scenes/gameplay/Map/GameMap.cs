@@ -7,6 +7,8 @@ public class GameMap : Node2D
 
     Node _projectiles;
 
+    Node _pickup;
+
     [Export]
     public Vector2 MovementDirection;
 
@@ -16,6 +18,8 @@ public class GameMap : Node2D
         _layers = GetNode<Node2D>($"%{nameof(_layers)}");
 
         _projectiles = GetNode<Node>($"%{nameof(_projectiles)}");
+
+        _pickup = GetNode<Node>($"%{nameof(_pickup)}");
 
         // Assign gamemap to global state
         GlobalGameState.GameplayData.GameMap = this;
@@ -48,7 +52,5 @@ public class GameMap : Node2D
 
         // Add child to the root
         _projectiles.AddChild(newProjectile);
-
-        //newProjectile.SpawnProjectileAt(_projectiles, _spawnLocation, this.GlobalRotation, ProjectileSpeed);
     }
 }

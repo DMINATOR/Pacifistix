@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/gameplay/Map/Layers/BackgroundMapLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gameplay/Map/GameMap.cs" type="Script" id=2]
 [ext_resource path="res://scenes/gameplay/Map/Layers/StarmapLayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/gameplay/Map/Layers/TerrainMapLayer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/pickup/Pickup.tscn" type="PackedScene" id=5]
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource( 2 )
@@ -14,6 +15,9 @@ MovementDirection = Vector2( 0, 1 )
 
 [node name="_layers" type="Node2D" parent="."]
 unique_name_in_owner = true
+__meta__ = {
+"_editor_description_": "Different terrain and background laters."
+}
 
 [node name="BackgroundMapLayer" parent="_layers" instance=ExtResource( 1 )]
 MovementSpeed = 8.0
@@ -29,3 +33,15 @@ MovementSpeed = 16.0
 
 [node name="_projectiles" type="Node" parent="."]
 unique_name_in_owner = true
+__meta__ = {
+"_editor_description_": "Projectiles - moving and with collision"
+}
+
+[node name="_pickup" type="Node" parent="."]
+unique_name_in_owner = true
+__meta__ = {
+"_editor_description_": "Items to pickup"
+}
+
+[node name="Pickup" parent="_pickup" instance=ExtResource( 5 )]
+position = Vector2( 392, 82 )
