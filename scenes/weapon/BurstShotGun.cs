@@ -62,6 +62,6 @@ public class BurstShotGun : BaseGun
         GD.Print("Shoot");
 
         var newProjectile = ProjectileScene.Instance<BulletProjectile>();
-        newProjectile.SpawnProjectileAt(Owner.Owner.Owner, _spawnLocation, this.GlobalRotation, ProjectileSpeed);
+        GlobalGameState.GameplayData.GameMap.SpawnProjectile(newProjectile, _spawnLocation, this.GlobalRotation, ProjectileSpeed);
     }
 }

@@ -26,7 +26,7 @@ public class SingleShotGun : BaseGun
             _shooting = true;
 
             var newProjectile = ProjectileScene.Instance<BulletProjectile>();
-            newProjectile.SpawnProjectileAt(Owner.Owner.Owner, _spawnLocation, this.GlobalRotation, ProjectileSpeed);
+            GlobalGameState.GameplayData.GameMap.SpawnProjectile(newProjectile, _spawnLocation, this.GlobalRotation, ProjectileSpeed);
 
             // Projectile was shot
             return this;

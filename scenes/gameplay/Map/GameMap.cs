@@ -5,6 +5,8 @@ public class GameMap : Node2D
 {
     Node2D _layers;
 
+    Node _projectiles;
+
     [Export]
     public Vector2 MovementDirection;
 
@@ -12,6 +14,11 @@ public class GameMap : Node2D
     public override void _Ready()
     {
         _layers = GetNode<Node2D>($"%{nameof(_layers)}");
+
+        _projectiles = GetNode<Node>($"%{nameof(_projectiles)}");
+
+        // Assign gamemap to global state
+        GlobalGameState.GameplayData.GameMap = this;
     }
 
 
@@ -26,9 +33,22 @@ public class GameMap : Node2D
             position.x += mapLayer.MovementSpeed * delta * MovementDirection.x;
             position.y += mapLayer.MovementSpeed * delta * MovementDirection.y;
 
-            GD.Print($"{position}");
+           // GD.Print($"{position}");
             mapLayer.Position = position;
         }
     }
 
+    public void SpawnProjectile(BulletProjectile newProjectile, Position2D spawnLocation, float rotation, float projectileSpeed)
+    {
+        // Apply global transform location
+        newProjectile.Transform = spawnLocation.GlobalTransform;
+
+        // Apply rotation to projectile
+        newProjectile.LinearVelocity = new Vector2(0, -projectileSpeed).Rotated(rotation);
+
+        // Add child to the root
+        _projectiles.AddChild(newProjectile);
+
+        //newProjectile.SpawnProjectileAt(_projectiles, _spawnLocation, this.GlobalRotation, ProjectileSpeed);
+    }
 }

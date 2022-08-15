@@ -27,4 +27,5 @@ __meta__ = {
 }
 MovementSpeed = 16.0
 
-[node name="Logic" type="Node" parent="."]
+[node name="_projectiles" type="Node" parent="."]
+unique_name_in_owner = true
