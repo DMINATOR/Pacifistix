@@ -122,7 +122,12 @@ public class PlayerShip : Area2D
 
         if (body.IsInGroup(Groups.Pickup))
         {
-            GD.Print("picker");
+            var pickup = body as Pickup;
+            GD.Print($"{pickup} = {pickup.Type}");
+
+            // remove from the scene
+            //pickup.GetParent().RemoveChild(pickup);
+            pickup.QueueFree();
         }
     }
 
