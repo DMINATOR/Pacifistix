@@ -5,8 +5,6 @@ public class Pickup : RigidBody2D
 {
     [Export]
     public PickupType Type;
-
-
 }
 
 
@@ -14,5 +12,6 @@ public class Pickup : RigidBody2D
 public enum PickupType
 {
     None,
+    
 
 }

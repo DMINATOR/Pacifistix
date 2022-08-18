@@ -32,3 +32,13 @@ public static class InputMapKeys
 
     public const string PreviousWeapon = "previous_weapon";
 }
+
+/// <summary>
+/// Commonly defined Groups
+/// </summary>
+public static class Groups
+{
+    public const string Player = "Player";
+
+    public const string Pickup = "Pickup";
+}

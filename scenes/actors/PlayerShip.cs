@@ -113,4 +113,17 @@ public class PlayerShip : Area2D
     {
         _playerGuns.Release();
     }
+
+    // Triggered when another body entered the area
+    // We only want player to be affected by pickup
+    public void OnBodyEnteredDelegateCallback(PhysicsBody2D body)
+    {
+        GD.Print($"{body}");
+
+        if (body.IsInGroup(Groups.Pickup))
+        {
+            GD.Print("picker");
+        }
+    }
+
 }
