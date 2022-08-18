@@ -12,6 +12,9 @@ public class PlayerShip : Area2D
     [Signal]
     public delegate void OnPlayerGunChangedDelegate(BaseGun gun);
 
+    [Signal]
+    public delegate void OnPlayerPickupDelegate(PickupType pickup);
+
     private CollisionShape2D _collisionShape2D;
 
     public Vector2 ScreenSize; // Size of the game window.
@@ -126,8 +129,9 @@ public class PlayerShip : Area2D
             GD.Print($"{pickup} = {pickup.Type}");
 
             // remove from the scene
-            //pickup.GetParent().RemoveChild(pickup);
             pickup.QueueFree();
+
+            EmitSignal(nameof(OnPlayerPickupDelegate), pickup.Type);
         }
     }
 
