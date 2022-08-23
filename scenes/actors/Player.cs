@@ -34,6 +34,11 @@ public class Player : Node
     // Called when player pickups
     public void OnPlayerPickupDelegateCallback(PickupType type)
     {
+        if( type == PickupType.Junk )
+        {
+            GlobalGameState.GameplayData.JunkCollected++;
+        }
+
         EmitSignal(nameof(OnPlayerPickupDelegate), type);
     }
 

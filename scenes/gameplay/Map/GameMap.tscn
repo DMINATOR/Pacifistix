@@ -49,3 +49,16 @@ __meta__ = {
 
 [node name="Pickup" parent="_layers/ActorsMapLayer/_pickup" instance=ExtResource( 5 )]
 position = Vector2( 392, 82 )
+Type = 1
+
+[node name="Pickup2" parent="_layers/ActorsMapLayer/_pickup" instance=ExtResource( 5 )]
+position = Vector2( 382, -135 )
+Type = 1
+
+[node name="Pickup3" parent="_layers/ActorsMapLayer/_pickup" instance=ExtResource( 5 )]
+position = Vector2( 493, -52 )
+Type = 1
+
+[node name="Pickup4" parent="_layers/ActorsMapLayer/_pickup" instance=ExtResource( 5 )]
+position = Vector2( 422, 211 )
+Type = 1
