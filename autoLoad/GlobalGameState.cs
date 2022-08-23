@@ -16,6 +16,8 @@ public class GameplayData
 {
     public int Score;
 
+    public int JunkCollected;
+
     // Reference to current gamemap
     public GameMap GameMap;
 }

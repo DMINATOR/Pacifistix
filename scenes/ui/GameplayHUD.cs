@@ -25,4 +25,9 @@ public class GameplayHUD : Control
 
         _playerGunsHUD.OnPlayerGunChanged(gun);
     }
+
+    public void OnPickupDelegateCallback(PickupType type)
+    {
+        _pickupHUD.OnPickupDelegateCallback(type);
+    }
 }
