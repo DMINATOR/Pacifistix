@@ -10,3 +10,4 @@ script = ExtResource( 1 )
 
 [connection signal="OnPlayerGunChangedDelegate" from="PlayerShip" to="." method="OnPlayerGunChangedDelegateCallback"]
 [connection signal="OnPlayerGunShootDelegate" from="PlayerShip" to="." method="OnPlayerGunShootDelegateCallback"]
+[connection signal="OnPlayerPickupDelegate" from="PlayerShip" to="." method="OnPlayerPickupDelegateCallback"]

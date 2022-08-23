@@ -13,5 +13,6 @@ public enum PickupType
 {
     None,
     
-
+    // Everything left
+    Junk,
 }

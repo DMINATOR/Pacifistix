@@ -9,6 +9,9 @@ public class Player : Node
     [Signal]
     public delegate void OnPlayerGunChangedDelegate(BaseGun gun);
 
+    [Signal]
+    public delegate void OnPlayerPickupDelegate(PickupType type);
+
     PlayerShip _playerShip;
 
     public override void _Ready()
@@ -26,6 +29,12 @@ public class Player : Node
     public void OnPlayerGunChangedDelegateCallback(BaseGun gun)
     {
         EmitSignal(nameof(OnPlayerGunChangedDelegate), gun );
+    }
+
+    // Called when player pickups
+    public void OnPlayerPickupDelegateCallback(PickupType type)
+    {
+        EmitSignal(nameof(OnPlayerPickupDelegate), type);
     }
 
     public void EquipAGun()

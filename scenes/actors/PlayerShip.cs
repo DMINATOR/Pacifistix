@@ -128,9 +128,10 @@ public class PlayerShip : Area2D
             var pickup = body as Pickup;
             GD.Print($"{pickup} = {pickup.Type}");
 
-            // remove from the scene
+            // Remove pickup from the scene
             pickup.QueueFree();
 
+            // Emit signal as player picks up the item
             EmitSignal(nameof(OnPlayerPickupDelegate), pickup.Type);
         }
     }
