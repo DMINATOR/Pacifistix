@@ -41,4 +41,6 @@ public static class Groups
     public const string Player = "Player";
 
     public const string Pickup = "Pickup";
+
+    public const string Enemy = "Enemy";
 }
