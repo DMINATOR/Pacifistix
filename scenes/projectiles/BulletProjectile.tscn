@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/projectiles/BulletProjectile.cs" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 31.0644
 
 [node name="BulletProjectile" type="RigidBody2D" groups=["projectile"]]
 gravity_scale = 0.0

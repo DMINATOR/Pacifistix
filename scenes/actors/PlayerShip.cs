@@ -121,7 +121,7 @@ public class PlayerShip : Area2D
     // We only want player to be affected by pickup
     public void OnBodyEnteredDelegateCallback(PhysicsBody2D body)
     {
-        GD.Print($"{body}");
+        GD.Print($"OnBodyEntered = {body}");
 
         if (body.IsInGroup(Groups.Pickup))
         {

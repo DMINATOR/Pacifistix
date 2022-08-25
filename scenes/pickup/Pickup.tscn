@@ -4,9 +4,10 @@
 [ext_resource path="res://scenes/pickup/Pickup.cs" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 32.3883
+radius = 32.1403
 
 [node name="Pickup" type="RigidBody2D" groups=["Pickup"]]
+mode = 3
 gravity_scale = 0.0
 script = ExtResource( 2 )
 
