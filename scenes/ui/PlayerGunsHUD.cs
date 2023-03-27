@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class PlayerGunsHUD : Control
+public partial class PlayerGunsHUD : Control
 {
     // Color at the start of the shot effect
     [Export]

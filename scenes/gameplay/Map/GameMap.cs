@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class GameMap : Node2D
+public partial class GameMap : Node2D
 {
     Node2D _layers;
 
@@ -42,10 +42,10 @@ public class GameMap : Node2D
         }
     }
 
-    public void SpawnProjectile(BulletProjectile newProjectile, Position2D spawnLocation, float rotation, float projectileSpeed)
+    public void SpawnProjectile(BulletProjectile newProjectile, Marker2D spawnLocation, float rotation, float projectileSpeed)
     {
         // Apply global transform location
-        newProjectile.Transform = spawnLocation.GlobalTransform;
+        newProjectile.Transform3D = spawnLocation.GlobalTransform;
 
         // Apply rotation to projectile
         newProjectile.LinearVelocity = new Vector2(0, -projectileSpeed).Rotated(rotation);

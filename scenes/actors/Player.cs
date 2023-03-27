@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Player : Node
+public partial class Player : Node
 {
     [Signal]
     public delegate void OnPlayerGunShootDelegate(BaseGun gun);

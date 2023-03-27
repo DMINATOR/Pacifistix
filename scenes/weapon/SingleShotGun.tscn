@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/weapon/SingleShotGun.cs" type="Script" id=1]
-[ext_resource path="res://assets/sprites/basic/box.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/basic/box.png" type="Texture2D" id=2]
 
 [node name="SingleShotGun" type="Node2D"]
 scale = Vector2( 0.4, 0.4 )
@@ -10,9 +10,9 @@ __meta__ = {
 "_editor_description_": "Basic gun that deploys a projectile with a single shot."
 }
 
-[node name="GunShroudSprite" type="Sprite" parent="."]
+[node name="GunShroudSprite" type="Sprite2D" parent="."]
 scale = Vector2( 0.548, 1 )
 texture = ExtResource( 2 )
 
-[node name="SpawnLocation" type="Position2D" parent="."]
+[node name="SpawnLocation" type="Marker2D" parent="."]
 position = Vector2( 0, -35 )

@@ -4,7 +4,7 @@ using System;
 /// <summary>
 /// Contains list of available guns and allows player to equip one
 /// </summary>
-public class PlayerGuns : Node2D
+public partial class PlayerGuns : Node2D
 {
     private BaseGun _equippedGun = null;
 

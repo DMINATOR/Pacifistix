@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class PlayerShip : Area2D
+public partial class PlayerShip : Area2D
 {
     [Export]
     public int Speed = 400; // How fast the player ship will move (pixels/sec).

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class BurstShotGun : BaseGun
+public partial class BurstShotGun : BaseGun
 {
     [Export]
     public PackedScene ProjectileScene;
@@ -12,13 +12,13 @@ public class BurstShotGun : BaseGun
     [Export]
     public float DelayBetweenShots = 0.1f; // How long we should wait before shooting another projectile (sec).
 
-    private Position2D _spawnLocation;
+    private Marker2D _spawnLocation;
 
     private Timer _delayBetweenProjectilesTimer;
 
     public override void _Ready()
     {
-        _spawnLocation = GetNode<Position2D>("SpawnLocation");
+        _spawnLocation = GetNode<Marker2D>("SpawnLocation");
 
         _delayBetweenProjectilesTimer = GetNode<Timer>("DelayBetweenProjectilesTimer");
     }

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class GlobalGameState : Node
+public partial class GlobalGameState : Node
 {
     // Game state during runtime
     public static GameplayData GameplayData = new GameplayData();
@@ -12,7 +12,7 @@ public class GlobalGameState : Node
 
 
 // Data stored during gameplay
-public class GameplayData
+public partial class GameplayData
 {
     public int Score;
 
@@ -24,7 +24,7 @@ public class GameplayData
 
 
 // Data to persist
-public class PersistedData
+public partial class PersistedData
 {
     // Music volume, expected in range -80..0, default = 0
     public int MusicVolumeInDb = 0;

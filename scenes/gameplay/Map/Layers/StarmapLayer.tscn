@@ -9,7 +9,7 @@ script = ExtResource( 1 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( -5177344, 0, 0, -4128768, 0, 0, -3080192, 0, 0, -2031616, 0, 0, -1048576, 0, 0, 0, 0, 0 )
+tile_data = PackedInt32Array( -5177344, 0, 0, -4128768, 0, 0, -3080192, 0, 0, -2031616, 0, 0, -1048576, 0, 0, 0, 0, 0 )
 __meta__ = {
 "_editor_description_": "Layer above background, no collision detection."
 }

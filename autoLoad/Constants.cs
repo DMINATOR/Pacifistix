@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 // 1 - Should be loaded first - No other dependencies
-public class Constants : Node
+public partial class Constants : Node
 {
 
 }

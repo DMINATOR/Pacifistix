@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class GameplayHUD : Control
+public partial class GameplayHUD : Control
 {
     private PlayerGunsHUD _playerGunsHUD;
 

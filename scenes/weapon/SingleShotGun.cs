@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class SingleShotGun : BaseGun
+public partial class SingleShotGun : BaseGun
 {
     [Export]
     public PackedScene ProjectileScene;
@@ -9,13 +9,13 @@ public class SingleShotGun : BaseGun
     [Export]
     public float ProjectileSpeed = 100; // How fast the projectile will move (pixels/sec).
 
-    private Position2D _spawnLocation;
+    private Marker2D _spawnLocation;
 
     private bool _shooting;
 
     public override void _Ready()
     {
-        _spawnLocation = GetNode<Position2D>("SpawnLocation");
+        _spawnLocation = GetNode<Marker2D>("SpawnLocation");
         _shooting = false;
     }
 

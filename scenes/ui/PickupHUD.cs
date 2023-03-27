@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class PickupHUD : Control
+public partial class PickupHUD : Control
 {
     private Label _junkCollected;
 

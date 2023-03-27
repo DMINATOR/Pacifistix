@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class MapLayer : Node2D
+public partial class MapLayer : Node2D
 {
     [Export]
     public float MovementSpeed;

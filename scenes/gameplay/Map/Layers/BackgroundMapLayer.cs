@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class BackgroundMapLayer : MapLayer
+public partial class BackgroundMapLayer : MapLayer
 {
 
     // Called when the node enters the scene tree for the first time.
